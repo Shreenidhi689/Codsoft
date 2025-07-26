@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centered Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #cbd5e1, #f1f5f9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calculator {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      width: 320px;
+    }
+
+    #display {
+      background: #f3f4f6;
+      color: #1f2937;
+      font-size: 2em;
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-align: right;
+      margin-bottom: 20px;
+      border: 2px solid #e2e8f0;
+      height: 60px;
+      overflow-x: auto;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 18px;
+      font-size: 1.2em;
+      background-color: #e2e8f0;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #1f2937;
+    }
+
+    button:hover {
+      background-color: #cbd5e1;
+    }
+
+    button.clear {
+      background-color: #f87171;
+      color: white;
+    }
+
+    button.clear:hover {
+      background-color: #ef4444;
+    }
+
+    button.equal {
+      background-color: #10b981;
+      color: white;
+    }
+
+    button.equal:hover {
+      background-color: #059669;
+    }
+
+    button.zero {
+      flex: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <div id="display">0</div>
+    <div class="buttons">
+      <div class="row">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button onclick="append('%')">%</button>
+        <button onclick="append('/')">÷</button>
+      </div>
+      <div class="row">
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">×</button>
+      </div>
+      <div class="row">
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">−</button>
+      </div>
+      <div class="row">
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
+      </div>
+      <div class="row">
+        <button class="zero" onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+    let currentInput = '';
+    let resultShown = false;
+
+    function append(value) {
+      if (resultShown && !isOperator(value)) {
+        currentInput = '';
+        resultShown = false;
+      }
+
+      currentInput += value;
+      display.innerText = currentInput;
+    }
+
+    function isOperator(char) {
+      return ['+', '-', '*', '/', '%'].includes(char);
+    }
+
+    function clearDisplay() {
+      currentInput = '';
+      display.innerText = '0';
+    }
+
+    function calculate() {
+      try {
+        let result = eval(currentInput);
+        display.innerText = result;
+        currentInput = result.toString();
+        resultShown = true;
+      } catch {
+        display.innerText = 'Error';
+        currentInput = '';
+      }
+    }
+  </script>
+
+</body>
+</html>

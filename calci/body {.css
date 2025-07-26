@@ -1,0 +1,83 @@
+/* Reset & layout setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #cbd5e1, #f1f5f9);
+}
+
+.calculator {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 320px;
+}
+
+#display {
+  background: #f3f4f6;
+  color: #1f2937;
+  font-size: 2em;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 20px;
+  border: 2px solid #e2e8f0;
+  height: 60px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 18px;
+  font-size: 1.2em;
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #1f2937;
+}
+
+button:hover {
+  background-color: #cbd5e1;
+}
+
+button.clear {
+  background-color: #f87171;
+  color: white;
+}
+
+button.clear:hover {
+  background-color: #ef4444;
+}
+
+button.equal {
+  background-color: #10b981;
+  color: white;
+}
+
+button.equal:hover {
+  background-color: #059669;
+}
+
+button.zero {
+  flex: 2;
+}
