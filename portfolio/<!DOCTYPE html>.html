@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #2563eb;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .edu-item, .project {
+      margin-bottom: 20px;
+    }
+
+    .btn-resume {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-resume:hover {
+      background-color: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e5e7eb;
+      color: #374151;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>John Doe</h1>
+    <p>Web Developer | JavaScript Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I am a passionate web developer learning full stack technologies. I love building responsive websites and solving real-world problems through code.</p>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <h3>Bachelor of Computer Science</h3>
+        <p class="school">XYZ University</p>
+        <p class="date">2020 – 2024</p>
+        <p class="details">Focused on software development, data structures, and web technologies. Completed projects in JavaScript and Python.</p>
+      </div>
+      <div class="edu-item">
+        <h3>High School</h3>
+        <p class="school">ABC Senior Secondary School</p>
+        <p class="date">2018 – 2020</p>
+        <p class="details">Science stream with Computer Science. Scored 90% overall.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Calculator App</h3>
+        <p>A simple calculator built using HTML, CSS, and JavaScript. It supports basic arithmetic operations and has a responsive UI.</p>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <p>You can view or download my resume below:</p>
+      <a href="assets/resume.pdf" download class="btn-resume" target="_blank">📄 Download Resume</a>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: johndoe@example.com</p>
+      <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 John Doe. All rights reserved.</p>
+  </footer>
+</body>
+</html>
